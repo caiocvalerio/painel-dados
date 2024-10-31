@@ -1,0 +1,51 @@
+idSituacao;situacao;apreciacao;regimeTramitacao;ultimoDespacho
+1;Em Tramitação;Plenário;Urgente;Rejeitado pelo plenário
+2;Em Análise;Plenário;Urgente;Indeferido pedido de urgência
+3;Retirado;Comissão;Ordinário;Indeferido pedido de urgência
+4;Retirado;Comissão;Ordinário;Aprovado na comissão
+5;Retirado;Plenário;Urgente;Publicada a ementa
+6;Rejeitado;Comissão;Ordinário;Publicada a ementa
+7;Em Tramitação;Comissão;Urgente;Indeferido pedido de urgência
+8;Rejeitado;Plenário;Urgente;Retirado pelo autor
+9;Rejeitado;Comissão;Ordinário;Publicada a ementa
+10;Em Análise;Plenário;Ordinário;Em análise na comissão
+11;Em Análise;Plenário;Ordinário;Em análise na comissão
+12;Em Análise;Plenário;Urgente;Publicada a ementa
+13;Rejeitado;Plenário;Ordinário;Deferido pedido de urgência
+14;Aprovado;Plenário;Urgente;Retirado pelo autor
+15;Retirado;Plenário;Ordinário;Deferido pedido de urgência
+16;Em Tramitação;Comissão;Ordinário;Publicada a ementa
+17;Rejeitado;Plenário;Urgente;Em análise na comissão
+18;Em Análise;Comissão;Ordinário;Em análise na comissão
+19;Rejeitado;Plenário;Ordinário;Aprovado na comissão
+20;Rejeitado;Comissão;Ordinário;Encaminhado para comissão
+21;Em Tramitação;Plenário;Urgente;Rejeitado pelo plenário
+22;Em Análise;Plenário;Urgente;Aprovado na comissão
+23;Em Análise;Comissão;Urgente;Aprovado na comissão
+24;Retirado;Comissão;Urgente;Encaminhado para comissão
+25;Em Tramitação;Comissão;Urgente;Retirado pelo autor
+26;Em Análise;Comissão;Urgente;Encaminhado para comissão
+27;Em Análise;Plenário;Urgente;Publicada a ementa
+28;Retirado;Plenário;Ordinário;Indeferido pedido de urgência
+29;Retirado;Comissão;Ordinário;Rejeitado pelo plenário
+30;Em Análise;Plenário;Ordinário;Em análise na comissão
+31;Rejeitado;Plenário;Ordinário;Encaminhado para comissão
+32;Rejeitado;Plenário;Urgente;Rejeitado pelo plenário
+33;Aprovado;Comissão;Ordinário;Retirado pelo autor
+34;Aprovado;Comissão;Ordinário;Deferido pedido de urgência
+35;Em Análise;Plenário;Urgente;Deferido pedido de urgência
+36;Em Tramitação;Comissão;Ordinário;Publicada a ementa
+37;Rejeitado;Comissão;Urgente;Aprovado na comissão
+38;Em Tramitação;Plenário;Urgente;Encaminhado para comissão
+39;Em Análise;Comissão;Ordinário;Rejeitado pelo plenário
+40;Aprovado;Plenário;Urgente;Retirado pelo autor
+41;Em Análise;Plenário;Ordinário;Indeferido pedido de urgência
+42;Em Análise;Comissão;Ordinário;Rejeitado pelo plenário
+43;Em Tramitação;Plenário;Ordinário;Rejeitado pelo plenário
+44;Em Tramitação;Comissão;Urgente;Rejeitado pelo plenário
+45;Aprovado;Plenário;Urgente;Retirado pelo autor
+46;Em Tramitação;Comissão;Ordinário;Aprovado na comissão
+47;Rejeitado;Comissão;Ordinário;Aprovado na comissão
+48;Aprovado;Plenário;Urgente;Aprovado na comissão
+49;Rejeitado;Comissão;Urgente;Indeferido pedido de urgência
+50;Aprovado;Comissão;Ordinário;Deferido pedido de urgência
