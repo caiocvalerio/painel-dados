@@ -1,2 +1,3 @@
 #ignora ambiente virtual gerado pelo venv
 env/
+__pycache__/
