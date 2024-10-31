@@ -15,21 +15,21 @@ def load_deputado_to_db(xml_file, table, engine):
 
     for deputado in root.findall('deputado'):
         record = {
-            'ideCadastro': deputado.find('ideCadastro').text,
+            #'ideCadastro': deputado.find('ideCadastro').text,
             #'codOrcamento': deputado.find('codOrcamento').text,
             #'condicao': deputado.find('condicao').text,
-            #'matricula': deputado.find('matricula').text,
+            'matricula': deputado.find('matricula').text,
             'idParlamentar': deputado.find('idParlamentar').text,
-            'nome': deputado.find('nome').text,
-            'nomeParlamentar': deputado.find('nomeParlamentar').text,
+            #'nome': deputado.find('nome').text,
+            #'nomeParlamentar': deputado.find('nomeParlamentar').text,
             #'urlFoto': deputado.find('urlFoto').text,
-            'sexo': deputado.find('sexo').text,
+            #'sexo': deputado.find('sexo').text,
             'uf': deputado.find('uf').text,
             'partido': deputado.find('partido').text,
             'gabinete': deputado.find('gabinete').text,
-            'anexo': deputado.find('anexo').text,
-            'fone': deputado.find('fone').text,
-            'email': deputado.find('email').text
+            #'anexo': deputado.find('anexo').text,
+            #'fone': deputado.find('fone').text,
+            #'email': deputado.find('email').text
         }
         data.append(record)
 
