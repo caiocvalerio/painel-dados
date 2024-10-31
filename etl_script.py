@@ -1,7 +1,5 @@
 import xml.etree.ElementTree as ET
-import psycopg2
 import pandas as pd
-import sqlalchemy
 from sqlalchemy import MetaData, Table, Column, Integer
 
 def load_deputado_to_db(xml_file, table, engine):
@@ -37,37 +35,16 @@ def load_deputado_to_db(xml_file, table, engine):
     df.to_sql(table, engine, if_exists='replace', index=False)
     print(f"Dados dos deputados carregados na tabela {table} com sucesso!")
 
-def load_orgaos_to_db(xml_file, table, engine):
-    """
-    Função que os orgaos para o banco de dados pgsql.
-    descontinuado?
-    """
-
-    tree = ET.parse(xml_file)
-    root = tree.getroot()
-
-    data = []
-
-    for orgao in root.findall('orgao'):
-        record = {
-            'id': orgao.get('id'),
-            'idTipodeOrgao': orgao.get('idTipodeOrgao'),
-            'sigla': orgao.get('sigla'),
-            'descricao': orgao.get('descricao')
-        }
-        data.append(record)
-
-    df = pd.DataFrame(data)
-    df.to_sql(table_name, engine, if_exists='replace', index=False)
-    print(f"Dados de órgãos carregados na tabela {table_name} com sucesso!")
-
-def load_preposicoes_to_db(csv_file, table, engine):
+def load_proposicoes_to_db(csv_file, table, engine):
     """
     Função que carrega preposicoes para o banco de dados pgsql.
     """
-
-
+    
     df = pd.read_csv(csv_file, delimiter=';', on_bad_lines='skip')
+
+    # Colunas a remover
+    colunas_remover = []
+    df = df.drop(columns=colunas_remover)
 
     try:
         df.to_sql(table, engine, if_exists='replace', index=False)
@@ -76,13 +53,37 @@ def load_preposicoes_to_db(csv_file, table, engine):
     except pd.errors.ParserError as e:
         print(f"Erro ao processar o CSV: {e}")
 
+def load_situacao_deputados_to_db(csv_file, table, engine):
+
+    df = pd.read_csv(csv_file, delimiter=";", on_bad_lines='skip', encoding='ISO-8859-1')
+
+    try:
+        df.to_sql(table, engine, if_exists='replace', index=False)
+        print(f"Dados das situações dos deputados carregados na tabela {table} com sucesso!")
+
+    except pd.errors.ParserError as e:
+        print(f"Erro ao processar o CSV: {e}")
+
 def create_time_table(engine):
     metadata = MetaData()
+    
+    try:
+        tempo = Table(
+            'tempo', metadata,
+            Column('ano', Integer, primary_key=True)
+        )
 
-    tempo = Table(
-        'tempo', metadata,
-        Column('id', Integer, primary_key=True),
-        Column('ano', Integer, nullable=False),
-    )
+        metadata.create_all(engine)
 
-    metadata.create_all(engine)
+        # Inserir os anos de 2002 a 2016 -- dados que estão presentes no proposicoes.csv
+        with engine.connect() as conn:
+            
+            # Iniciar uma transação explícita
+            with conn.begin():
+                anos = [{'ano': ano} for ano in range(2002, 2017)]
+                conn.execute(tempo.insert(), anos)
+
+        print("Tabela tempo criada com sucesso.")
+
+    except Exception as e:
+        print("Erro ao criar a tabela tempo: {e}")
