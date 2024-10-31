@@ -86,4 +86,4 @@ def create_time_table(engine):
         print("Tabela tempo criada com sucesso.")
 
     except Exception as e:
-        print("Erro ao criar a tabela tempo: {e}")
+        print(f"Erro ao criar a tabela tempo: {e}")
