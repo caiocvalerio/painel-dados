@@ -1,5 +1,7 @@
-from etl_script import *
-from conn_db import *
+from etl_script.schema_util import *
+from etl_script.data_loader import *
+from etl_script.olap_creation import *
+from db.conn_db import *
 
 if __name__ == '__main__':
     
